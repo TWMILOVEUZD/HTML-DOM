@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>获取节点：通过标签名获取元素节点</title>
+<script type="text/javascript">
+	/*
+		所有的元素都有标签名 
+		通过 getElementsByTagName 根据标签名称获取一个元素数组。
+	*/
+	var divs = document.getElementsByTagName("div");
+	for (var i = 0; i < divs.length; i++) {
+		document.write(divs[i]);
+		document.write("<br>");
+	}
+</script>
+</head>
+<body>
+	<div>hello javascript</div>
+	<div>hello BOM</div>
+	<div>hello DOM</div>
+</body>
+</html>
