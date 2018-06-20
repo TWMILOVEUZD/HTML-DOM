@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>获取节点：通过表单元素的name获取元素节点</title>
+<script type="text/javascript">
+	/*
+		表单元素都有name属性，通过getElementsByName可以根据name属性的值，获取元素节点。
+	*/
+	var elements = document.getElementsByName("userName");
+	for (var i = 0; i < elements.length; i++) {
+		document.write(elements[i]);
+		document.write("<br>");
+	}
+</script>
+</head>
+<body>
+	用户名<input name="userName"><br>
+	密码<input name="userPassword"><br>
+</body>
+</html>
