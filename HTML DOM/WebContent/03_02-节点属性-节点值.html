@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>节点属性：节点值</title>
+
+</head>
+<body>
+	<div id="d1">hello HTML DOM</div>
+</body>
+<script type="text/javascript">
+	/*
+		nodeValue表示一个节点的值
+		如本例：
+		document.nodeValue 文档的节点值，是 null
+		div1.nodeValue 元素的节点值，是null
+		div1.attributes[0].nodeValue 属性的节点值，是对应的属性值 d1
+		div1.childNodes[0].nodeValue 内容的节点值，是内容 即： #text
+	*/
+	function p(s) {
+		document.write(s);
+		document.write("<br>");
+	}
+	var div1 = document.getElementById("d1");
+	p("document是没有nodeValue的：" + document.nodeValue);
+	p("元素节点是没有nodeValue的：" + div1.nodeValue);
+	p("属性节点id的nodeValue：" + div1.attributes[0].nodeValue);
+	p("内容节点的nodeValue：" + div1.childNodes[0].nodeValue);
+</script>
+</html>
