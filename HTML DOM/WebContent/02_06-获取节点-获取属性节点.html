@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>获取节点：获取属性节点</title>
+
+</head>
+<body>
+	<div id="d1" align="center" class="abc">hello HTML DOM</div>
+</body>
+<script type="text/javascript">
+	/*
+		首先通过getElementById获取元素节点，然后通过元素节点的attributes获取其下所有的属性节点。
+		因为属性节点是多个，所以是以数组的形式返回出来的，接着通过for循环遍历，查看每个节点的nodeName和nodeValue
+		如果要获取一个指定属性的值，可以采用如下风格，as表示所有的属性，as["id"]取出名称是id的属性
+		as["id"].nodeValue
+		注: nodeName和nodeValue表示一个节点的名称和值，详见下一步的学习节点的属性
+	*/
+	var div1 = document.getElementById("d1");
+	var as = div1.attributes;
+	document.write("div总共有" + as.length + " 个属性");
+	document.write("分别是：");
+	for (var i = 0; i < as.length; i++) {
+		document.write("<br>");
+		document.write(as[i].nodeName);
+		document.write(":");
+		document.write(as[i].nodeValue);
+	}
+	document.write("<br>");
+	document.write("div的id属性值是：" + as["id"].nodeValue);
+</script>
+</html>
