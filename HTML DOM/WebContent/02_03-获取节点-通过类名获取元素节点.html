@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>获取节点：通过类名获取元素节点</title>
+<script type="text/javascript">
+	/*
+		与 getElementsByTagName 类似的，也可以通过 getElementsByClassName 根据class返回一个节点数组
+	*/
+	var elements = document.getElementsByClassName("d");
+	for (var i = 0; i < elements.length; i++) {
+		document.write(elements[i]);
+		document.write("<br>");
+	}
+</script>
+</head>
+<body>
+	<h1 class="d">hello javascript</h1>
+	<h2 class="d">hello BOM</h2>
+	<div class="d">hello DOM</div>
+</body>
+</html>
