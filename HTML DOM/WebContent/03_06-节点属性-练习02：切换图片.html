@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>练习02：切换图片</title>
+
+</head>
+<body>
+	<button onclick="switch1()">通过src属性切换图片1</button> <br>
+	<button onclick="switch2()">通过属性节点切换图片2</button> <br>
+	<img id="img" width="100" src="img/IMG_2553.JPG"/>
+</body>
+<script type="text/javascript">
+	function switch1() {
+		var img = document.getElementById("img");
+		img.src = "img/IMG_2584.JPG";
+	}
+	
+	function switch2() {
+		var img = document.getElementById("img");
+		img.attributes["src"].nodeValue="img/IMG_2617.JPG";
+	}
+</script>
+</html>
