@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>样式：改变背景色</title>
+
+</head>
+<body>
+	<div id="d1" style="background-color:pink">Hello HTML DOM</div>
+	<button onclick="change()">改变div的背景色</button>
+</body>
+<script type="text/javascript">
+	/*
+		通过给元素的style.backgroundColor 赋值，修改样式
+		你也许注意到了style.backgroundColor 这里的backgroundColor和css中的背景色background-color 是有所不同的
+		换句话说，通过DOM的style去修改样式，需要重新记忆另一套样式名称，这是很累赘的事情。
+		最好能够通过CSS的属性名，直接就进行修改了。比如通过这样的方式：
+		d1.css("background-color","green");
+		这样就仅仅需要使用CSS原本的属性名即可了。
+		Javascript并不提供这样的解决方案，但是到了JQuery就提供了这样的解决方案,请参考 通过JQuery设置CSS
+	*/
+	function change() {
+		var d1 = document.getElementById("d1");
+		d1.style.backgroundColor = "green";
+	}
+</script>
+</html>
