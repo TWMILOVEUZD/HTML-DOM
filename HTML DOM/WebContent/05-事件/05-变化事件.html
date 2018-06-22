@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>变化事件</title>
+
+</head>
+<body>
+	<input type="text" id="t1" onchange="change()" value="">
+	<br>
+	<br>
+	<input type="button" value="令输入框失去焦点的按钮">
+	<br>
+	<br>
+	<div id="message"></div>
+</body>
+<script type="text/javascript">
+	/*
+		当组件的值发生变化的时候，会触发onchange事件 
+		注：对于输入框而言，只有在失去焦点的时候，才会触发onchange，所以需要点击一下"按钮" 造成输入框失去焦点
+	*/
+	function change() {
+		var message = document.getElementById("message");
+		var t1 = document.getElementById("t1");
+		message.innerHTML = "输入框的值变为了：" + t1.value;
+	}
+</script>
+</html>
