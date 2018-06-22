@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>点击事件</title>
+<script type="text/javascript">
+	/*
+		点击事件，由单击，双击按两个事件组成
+		当在组件上单击的时候，会触发onclick事件
+		当在组件上双击的时候，会触发ondblclick事件
+		注1：在组件上，按下空格或则回车键也可以造成单击的效果，但是却不能造成双击的效果
+		注2: 自定义函数不要使用click()，这是保留函数名。
+	*/
+	function singleClick() {
+		document.getElementById("message").innerHTML = "单机按钮";
+	}
+	
+	function doubleClick() {
+		document.getElementById("message").innerHTML = "双击按钮";
+	}
+</script>
+</head>
+<body>
+	<input type="button" onclick="singleClick()" ondblclick="doubleClick()" value="用于演示单击和双击">
+	<br>
+	<br>
+	<div id="message">
+		
+	</div>
+</body>
+</html>
