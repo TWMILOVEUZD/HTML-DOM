@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>键盘事件</title>
+<script type="text/javascript">
+	/*
+		键盘事件，由键盘按下keydown，键盘按下keypress,键盘弹起几个事件组成
+		当在组件上键盘按下的时候，会触发onkeydown事件
+		当在组件上键盘按下的时候，也会触发onkeypress事件
+		当在组件上键盘弹起的时候，会触发onkeyup事件
+		注: onkeypress 是当按下并弹起的组合动作，这个说法是错误的
+		都是用于表示键盘按下，onkeydown和onkeypress的区别在什么呢？
+		onkeydown
+		可以获取所有键，除了打印键Prts
+		可以获取用户是否点击了修饰键 (ctrl,shift,alt)
+		不能判断输入的是大写还是小写
+		onkeypress
+		只能获取字符键
+		不能获取用户是否点击了修饰键 (ctrl,shift,alt)
+		可以判断输入的是大写还是小写
+		
+		但是！ 在不同的浏览器上，以上规则是不成立的。说这些都没有卵用，你无法控制用户到底使用哪种浏览器。
+		所以，只要记得keydown和keypress都表示点下了键。。。即可
+		*/
+	var number = 0;
+	//onkeydown
+	function down(e) {
+		var text = "按下了键" + e.keyCode;
+		if(e.shiftKey == 1)
+			text += "并且按下了shift键";
+		else if(e.ctrlKey == 1)
+			text += "并且按下了ctrl键";
+		else if(e.altKey == 1)
+			text += "并且按下了alt键";
+		document.getElementById("message").innerHTML = text;
+	}
+	
+	//onkeyup
+	function up() {
+		document.getElementById("message").innerHTML = "弹起了键盘"
+	}
+	
+	//onkeypress
+	function press(e) {
+		var text = "按下了键" + e.keyCode;
+		if(e.shiftKey == 1)
+			text += "并且按下了shift键";
+		else if(e.ctrlKey == 1)
+			text += "并且按下了ctrl键";
+		else if(e.altKey == 1)
+			text += "并且按下了alt键";
+		document.getElementById("message").innerHTML = text;
+	}
+</script>
+</head>
+<body>
+	"记得要先用鼠标选中该组件，然后敲击键盘"<br>
+	<input type="button" onkeydown="down(event)" value="用于演示按下keydown">
+	<br>
+	<br>
+	<input type="button" onkeypress="press(event)" value="用于演示按下keypress">
+	<br>
+	<br>
+	<input type="button" onkeyup="up()" value="用于演示弹起">
+	<br>
+	<br>
+	<div id="message">
+		
+	</div>
+</body>
+</html>
