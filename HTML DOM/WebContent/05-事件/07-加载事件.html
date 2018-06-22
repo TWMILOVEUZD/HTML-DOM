@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>加载事件</title>
+
+</head>
+<body onload="loadBody()">
+	<div id="message1"></div>
+	<div id="message2"></div>	
+</body>
+	<img width="200px" height="300px" alt="图片" src="../img/IMG_2553.JPG" onload="loadImg()">
+<script type="text/javascript">
+	/*
+		当整个文档加载成功，或者一个图片加载成功，会触发加载事件
+		当body元素或者img@加载的时候，会触发onload事件
+	*/	
+	function loadBody() {
+		document.getElementById("message1").innerHTML = "文档加载成功";
+	}
+	function loadImg() {
+		document.getElementById("message2").innerHTML = "图片加载成功";
+	}
+</script>
+</html>
