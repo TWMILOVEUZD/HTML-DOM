@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>鼠标事件</title>
+
+</head>
+<body>
+	<input type="button" onmousedown="down()" onmouseup="up()" value="用于演示按下和弹起">
+	<br>
+	<br>
+	<input type="button" onmousemove="move()" value="用于演示鼠标经过">
+	<br>
+	<br>
+	<input type="button" onmouseover="over()" value="用于演示鼠标进入">
+	<br>
+	<br>
+	<input type="button" onmouseout="out()" value="用于演示鼠标退出">
+	<br>
+	<br>
+	<div id="message"></div>
+</body>
+<script type="text/javascript">
+	/*
+		鼠标事件，由鼠标按下，鼠标弹起，鼠标经过，鼠标进入，鼠标退出几个事件组成
+		当在组件上鼠标按下的时候，会触发onmousedown事件
+		当在组件上鼠标弹起的时候，会触发onmouseup事件
+		
+		当在组件上鼠标经过的时候，会触发onmousemove事件
+		当在组件上鼠标进入的时候，会触发onmouseover事件
+		当在组件上鼠标退出的时候，会触发onmouseout事件
+		注: 当鼠标进入一个组件的时候，onmousemove和onmouseover都会被触发，区别在于无论鼠标在组件上如何移动，onmouseover只会触发一次，onmousemove每次移动都会触发
+	*/
+	var number = 0;
+	function down() {
+		document.getElementById("message").innerHTML = "按下了鼠标";
+	}
+	function up() {
+		document.getElementById("message").innerHTML = "弹起了鼠标";
+	}
+	function move() {
+		document.getElementById("message").innerHTML = "鼠标经过次数：" + (++number);	
+	}
+	function over() {
+		document.getElementById("message").innerHTML = "鼠标进入次数：" + (++number);
+	}
+	function out() {
+		document.getElementById("message").innerHTML = "鼠标退出";
+		number = 0;
+	}
+</script>
+</html>
