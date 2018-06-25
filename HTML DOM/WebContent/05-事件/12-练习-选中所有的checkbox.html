@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>选中所有的checkbox</title>
+<style type="text/css">
+	a{
+		font-size: 12px;
+		font-weight: bold;
+		color:SteelBlue;
+		text-decoration: none;
+	}
+	
+</style>	
+</head>
+<body>
+	<input type="checkbox" onclick="selectAll(this)" > 全选<br>
+	<input type="checkbox" > tokyo hot<br>
+	<input type="checkbox" > dota <br>
+	<input type="checkbox" > lol <br>
+	<input type="checkbox" > wow <br>
+	<input type="checkbox" > warcraft <br>
+	<input type="checkbox" > diablo <br>
+	<a href="#nowhere" onclick="reverse()">反选</a>
+</body>
+<script type="text/javascript">
+	/*
+		有多个复选框
+		点击选中所有，所有的复选框都选中了
+		点击反向选择，反选复选框
+	*/
+	function selectAll(checkbox){
+		   var  checked = checkbox.checked;
+		   var checkboxes= document.getElementsByTagName("input");
+		   for(var i in checkboxes){
+		       checkboxes[i].checked=checked?"checked":"";
+		   }
+		}
+		 
+		function reverse(){
+		   var checkboxes= document.getElementsByTagName("input");
+		   for(var i in checkboxes){
+		       if(0==i)
+		           continue;
+		       checkboxes[i].checked=checkboxes[i].checked?"":"checked";
+		   }
+		}
+</script>
+</html>
