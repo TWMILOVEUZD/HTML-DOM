@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>阻止事件的发生</title>
+
+</head>
+<body>
+	<form method="post" action="/study/login.jsp" onsubmit="return login()">
+	账号：<input id="name" type="text" name="name"><br/>
+	密码：<input type="password" name="password"><br/>
+	<input type="submit" value="登陆">
+	</form>
+</body>
+<script type="text/javascript">
+	/*
+		比如在提交一个表单的时候，如果用户名为空，弹出提示，并阻止原本的提交
+		1. 在调用函数的时候，增加一个return
+		2. 在函数中，如果发现用户名为空，则返回false
+		3. 当onSubmit得到的返回值是false的时候，表单的提交功能就被取消了
+	*/
+	function login() {
+		var name = document.getElementById("name");
+		if(name.value.length == 0){
+			alert("用户名不能为空");
+			return false;
+		}
+		return true;
+	}
+</script>
+</html>
