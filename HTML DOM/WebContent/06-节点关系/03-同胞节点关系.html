@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>同胞节点关系</title>
+</head>
+<body>
+	<div id="parentDiv">
+		父Div的内容
+		<div id="d1">第一个div</div><div id="d2">第二个div</div>
+		<div id="d3">第三个div</div>
+	</div>
+	<button onclick="showPre()">获取d2的前一个同胞</button>
+	<button onclick="showNext()">获取d2的后一个同胞</button>
+</body>
+<script type="text/javascript">
+	/*
+		分别通过 previousSibling和nextSibling属性获取前一个，以及后一个同胞节点。
+		在本例中，首先获取d2元素节点
+		通过previousSibling获取前一个节点d1.
+		注意 d1和d2标签是紧挨着的，所以d2前一个节点是d1。
+		通过nextSibling 获取后一个节点#text.
+		注意 d2和d3不是紧挨着 标签之间有任何字符、空白、换行都会产生文本元素。 所以获取到的节点是#text.
+	*/
+	function showPre() {
+		var d2 = document.getElementById("d2");
+		alert(d2.previousSibling.nodeName);
+	}
+	
+	function showNext() {
+		var d2 = document.getElementById("d2");
+		alert(d2.nextSibling.nodeName);
+	}
+</script>
+</html>
