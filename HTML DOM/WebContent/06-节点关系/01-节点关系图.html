@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>节点关系图</title>
+</head>
+<body>
+	<div id="parentDiv">
+		<div id="d1">第一个div</div>
+		<div id="d2">第二个div</div>
+		<div id="d3">第三个div</div>
+	</div>
+	<img alt="图片" src="../img/1186.png">
+</body>
+<script type="text/javascript">
+	/*
+		假设html代码如实例中，那么各个元素节点的关系如下:
+		d1 d2 d3 的parentNode是parentDiv
+		parentDiv的firstNode是 d1
+		parentDiv的lastNode是d3
+		d2的previousSibling是d1
+		d2的nextSibling是d3
+		parentDiv的children是 d1 d2 d3
+	*/
+</script>
+</html>
