@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>练习-动态加载js</title>
+</head>
+<body>
+	<button onclick="loadJS()">test3041.js</button>
+</body>
+<script type="text/javascript">
+	/*
+	传统的加载js文件的办法是这样 :
+	script src="/study/hello.js" /script>
+	准备一个test3041.js，其内容是：
+	alert("this is test3041.js");
+	做一个按钮，当页面打开的时候，并不会加载这个test3041.js,只有在点击了按钮之后，才加载test3041.js
+	*/
+	function loadJS() {
+		var newScript = document.createElement('script');
+		newScript.src = 'http://how2j.cn/study/test3041.js';
+		var firstScript = document.getElementsByTagName("script")[0];
+		firstScript.parentNode.insertBefore(newScript,firstScript);
+	}
+</script>
+</html>
