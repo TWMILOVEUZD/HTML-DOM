@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>删除属性节点</title>
+</head>
+<body>
+	<a id="link" href="http://www.baidu.com">百度</a>
+	<br>
+	<button onclick="removeHref()">删除超链的href属性</button>
+</body>
+<script type="text/javascript">
+	/*
+		要删除某个属性节点有两步 
+		第一：先获取该元素节点 
+		第二：元素节点，调用removeAttribute删除指定属性节点
+	*/
+	
+	function removeHref() {
+		var link = document.getElementById("link");
+		link.removeAttribute("href");
+	}
+</script>
+</html>
