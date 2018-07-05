@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>在前方插入节点</title>
+</head>
+<body>
+	<div id="parentDiv">
+		<div id="d1">第一个div</div>
+		<div id="d2">第二个div</div>
+		<div id="d3">第三个div</div>
+	</div>
+	<button onclick="insertDiv()">在第二和第三之间，插入第二点五个div</button>
+</body>
+<script type="text/javascript">
+	/*
+		有时候，需要在指定位置插入节点，而不是只是追加在后面。 
+		这个时候就需要用到insertBefore 
+		1. 创建新节点 
+		2. 获取父节点 
+		3. 获取需要加入的子节点 
+		4. 通过insertBefore插入 
+		注: insertBefore的第一个参数是新元素，第二个参数是插入位置
+	*/
+	function insertDiv() {
+		var d25 = document.createElement("div");
+		var text = document.createTextNode("第2.5个div");
+		d25.appendChild(text);
+		
+		var parentDiv = document.getElementById("parentDiv");
+		var d3 = document.getElementById("d3");
+		
+		parentDiv.insertBefore(d25, d3);
+	}
+</script>
+</html>
