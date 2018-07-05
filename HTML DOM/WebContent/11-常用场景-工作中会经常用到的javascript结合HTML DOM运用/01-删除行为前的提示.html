@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>删除行为前的提示</title>
+</head>
+<body>
+	<table width="100%" border="1" celllspacing="0" id="heroTable">
+		<tr>
+			<td width="50%">英雄名称</td>
+			<td>
+				操作
+			</td>
+		</tr>
+		<tr>
+			<td>盖伦</td>
+			<td>
+				<a href="#" onclick="deleteRow(this)">删除</a>
+			</td>
+		</tr>
+		<tr>
+			<td>提莫</td>
+			<td>
+				<a href="#" onclick="deleteRow(this)">删除</a>
+			</td>
+		</tr>
+		<tr>
+			<td>祈求者</td>
+			<td>
+				<a href="#" onclick="deleteRow(this)">删除</a>
+			</td>
+		</tr>						
+	</table>
+</body>
+<script type="text/javascript">
+	/*
+		在进行删除操作前，都应该提示用户是否要删除
+	*/
+	function deleteRow(link) {
+		var b = confirm("确定删除？");
+		if(!b)
+			return;
+		var table = document.getElementById("heroTable");
+		var td = link.parentNode;
+		var tr = td.parentNode;
+		var index = tr.rowIndex;
+		table.deleteRow(index);
+	}
+</script>
+</html>
