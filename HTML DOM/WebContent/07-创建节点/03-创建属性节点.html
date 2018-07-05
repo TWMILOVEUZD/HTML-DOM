@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>创建属性节点</title>
+</head>
+<body>
+	<div id="d">Hello HTML DOM<br></div>
+	<button onclick="add()">在div中追加一个超链接</button>
+</body>
+<script type="text/javascript">
+	/*
+		首先创建一个元素节点a 
+		接着创建一个内容节点content 
+		把content加入到a 
+		然后通过createAttribute创建一个属性节点 href 
+		设置href的值为http:12306.com 
+		通过setAttributeNode把该属性设置到元素节点a上 
+		最后把a加入到div
+	*/
+	
+	function add() {
+		var a = document.createElement("a");
+		var content = document.createTextNode("http://www.baidu.com");
+		a.appendChild(content);
+		
+		var href = document.createAttribute("href");
+		href.nodeValue = "http://www.baidu.com";
+		a.setAttributeNode(href);
+		
+		var div1 = document.getElementById("d");
+		div1.appendChild(a);
+	}
+</script>
+</html>
