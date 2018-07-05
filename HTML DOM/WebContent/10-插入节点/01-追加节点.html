@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>追加节点</title>
+</head>
+<body>
+	<div id="parentDiv">
+		<div id="d1">第一个div</div>
+		<div id="d2">第二个div</div>
+		<div id="d3">第三个div</div>
+	</div>
+	<button onclick="appendDiv()">追加第4个div</button>
+</body>
+<script type="text/javascript">
+	/*
+		通过appendChild追加节点。 追加节点一定是把新的节点插在最后面 
+		1. 创建新节点 
+		2. 获取父节点 
+		3. 通过appendChild追加
+	*/
+	function appendDiv() {
+		var d4 = document.createElement("div");
+		var text = document.createTextNode("第四个div");
+		d4.appendChild(text);
+		
+		var parentDiv = document.getElementById("parentDiv");
+		parentDiv.appendChild(d4);
+	}
+</script>
+</html>
